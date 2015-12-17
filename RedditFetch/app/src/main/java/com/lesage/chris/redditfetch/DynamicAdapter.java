@@ -22,8 +22,9 @@ import java.util.ArrayList;
 public class DynamicAdapter extends BaseAdapter implements URLFetch.Callback{
     private ArrayList<RedditRecord> mData = new ArrayList<>();
     private LayoutInflater mInflater;
-    //private ProgressBar pb;
     private ImageView imageView;
+    private ProgressBar progressBar;
+    private View progressView;
 
     public DynamicAdapter(Context mContext) {
         mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -76,12 +77,16 @@ public class DynamicAdapter extends BaseAdapter implements URLFetch.Callback{
     public void fetchComplete(String result) {
         //Nothing, Url image is added to cache in background
         notifyDataSetChanged();
-        //pb.setVisibility(View.GONE);
+        progressBar = (ProgressBar) progressView.findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.GONE);
+        //MainActivity.progressBar.setVisibility(View.GONE);
     }
     @Override
     public void fetchStart(){
         //Create a progress bar to show loading
-        //pb.setVisibility(View.VISIBLE);
+        //MainActivity.progressBar.setVisibility(View.VISIBLE);
+        progressBar = (ProgressBar) progressView.findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
     }
     @Override
     public void fetchCancel(String url){
@@ -102,12 +107,14 @@ public class DynamicAdapter extends BaseAdapter implements URLFetch.Callback{
         imageView = (ImageView) theView.findViewById(R.id.picTextRowPic);
         imageView.setImageBitmap(bitmap);
 
+        progressView = theView;
+
         // Setting the progressBar
-//        pb = (ProgressBar) theView.findViewById(R.id.progressBar);
+//        progressBar = (ProgressBar) theView.findViewById(R.id.progressBar);
 //        if(imageView.getWidth() == 0 && imageView.getHeight() == 0)
-//            pb.setVisibility(View.VISIBLE);
+//            progressBar.setVisibility(View.VISIBLE);
 //        else
-//            pb.setVisibility(View.GONE);
+//            progressBar.setVisibility(View.GONE);
 
         return theView;
     }

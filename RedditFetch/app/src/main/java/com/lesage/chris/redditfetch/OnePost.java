@@ -26,11 +26,11 @@ public class OnePost extends AppCompatActivity implements URLFetch.Callback{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.one_post_layout);
 
-        ActionBar actionBar = getActionBar();
-        if(actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("Post Info");
-        }
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setLogo(R.mipmap.ic_launcher);
+        actionBar.setDisplayUseLogoEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setTitle("Details");
 
         TextView tv = (TextView) findViewById(R.id.titleText);
 

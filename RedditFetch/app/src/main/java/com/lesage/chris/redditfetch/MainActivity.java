@@ -48,10 +48,19 @@ public class MainActivity extends AppCompatActivity implements URLFetch.Callback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // XXX You need to setContentView
         setContentView(R.layout.activity_main);
         redditRecordAdapter = new DynamicAdapter(this);
-        //progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        //-------------Set Icon------------------------
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setLogo(R.mipmap.ic_launcher);
+        actionBar.setDisplayUseLogoEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setTitle("Search Reddit");
+
+        //-----------Navigation Drawer -------------------
 
         // Get max available VM memory, exceeding this amount will throw an
         // OutOfMemory exception. Stored in kilobytes as LruCache takes an

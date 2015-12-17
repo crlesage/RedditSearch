@@ -7,11 +7,11 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Reddit Search"
+        android:label="RedditCredit"
+        android:title="RedditCredit"
         android:theme="@style/Theme.AppCompat" >
         <activity
-            android:name=".MainActivity"
-            android:label="Reddit Search" >
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,11 +19,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="Post Info"
             android:name=".OnePost"
             android:theme="@style/Theme.AppCompat"
             android:parentActivityName="com.lesage.chris.redditfetch.MainActivity">
-
         </activity>
     </application>
 

@@ -13,13 +13,20 @@
         android:layout_weight="10"
         android:textSize="20sp"
         android:hint="type reddit search term"
-        android:id="@+id/searchTerm"/>
+        android:id="@+id/searchTerm"
+        style="@style/EditTextAppTheme"
+        android:textCursorDrawable="@drawable/apptheme_cursor_color"/>
 
     <ListView android:layout_height="fill_parent"
         android:layout_width="match_parent"
         android:id="@+id/listOfPosts"
         android:layout_below="@+id/searchTerm"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        style="@style/ListViewAppTheme"
+        android:scrollbarSize="5dp"
+        android:smoothScrollbar="true"
+        android:scrollbarStyle="insideInset"
+        android:scrollbarThumbVertical="@drawable/apptheme_listview_scrollbar" />
 
 
 </RelativeLayout>
