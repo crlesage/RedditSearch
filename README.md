@@ -7,13 +7,13 @@ Features to add:
 
   -Personal accounts for users: (Navigation Drawer)
   
-    -User name
+  -User name
   
-    -Saving feature for users to 'favorite'/'like' posts
+  -Saving feature for users to 'favorite'/'like' posts
       
-        -extend this to allow users to have their saved posts viewed seperately
+    -extend this to allow users to have their saved posts viewed seperately
   
-    -Sharing posts to friends (maybe)
+  -Sharing posts to friends (maybe)
   
 -Better UI
   
